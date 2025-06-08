@@ -4,10 +4,10 @@ import com.dariusnica.githubpredictor.model.GitHubIssueDTO;
 import com.dariusnica.githubpredictor.model.IssueFeatures;
 import com.dariusnica.githubpredictor.service.trainer.ModelTrainerService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 import smile.classification.LogisticRegression;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
 @RequiredArgsConstructor

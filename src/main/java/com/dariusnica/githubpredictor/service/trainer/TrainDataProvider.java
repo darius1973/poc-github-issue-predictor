@@ -6,9 +6,8 @@ import com.dariusnica.githubpredictor.model.GitHubSearchResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriUtils;
-
+import org.springframework.web.reactive.function.client.WebClient;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -24,14 +23,10 @@ public class TrainDataProvider {
     @Value("${github.repo}")
     private String repo;
 
-    //"https://api.github.com"
-    @Value("${github.baseUrl}")
-    private String baseUrl;
-
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     private final WebClient webClient = WebClient.builder()
-            .baseUrl(baseUrl)
+            .baseUrl("https://api.github.com")
             .defaultHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token)
             .build();
 
