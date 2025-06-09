@@ -66,7 +66,6 @@ public class PredictService {
 
     public int predictWith95PercentAccuracy(IssueFeatures input) {
         double threshold = 0.95;
-
         double[] features = {
                 input.titleLength(),
                 input.commentsFirstDay(),
@@ -75,10 +74,8 @@ public class PredictService {
                 input.labelBug() ? 1.0 : 0.0,
                 input.isBigStory() ? 1.0 : 0.0
         };
-
         LogisticRegression model = modelTrainerService.getModel();
         double probability = model.predict(features);
-
         return probability >= threshold ? 1 : 0;
     }
 }

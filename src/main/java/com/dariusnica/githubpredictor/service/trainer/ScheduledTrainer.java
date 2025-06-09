@@ -15,8 +15,7 @@ public class ScheduledTrainer {
 
     private final ModelTrainerService modelTrainerService;
 
-   // @Scheduled(cron = "0 0 3 * * *") // Every day at 3:00 AM
-   @Scheduled(cron = "0 36 11 * * *")
+   @Scheduled(cron = "0 0 3 * * *") // Every day at 3:00 AM
     public void retrainModelDaily() {
         try {
             modelTrainerService.trainModel();
