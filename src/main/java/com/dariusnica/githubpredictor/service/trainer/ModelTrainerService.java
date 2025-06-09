@@ -1,6 +1,7 @@
 package com.dariusnica.githubpredictor.service.trainer;
 
 import com.dariusnica.githubpredictor.model.GitHubIssueDTO;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import com.dariusnica.githubpredictor.model.IssueFeatures;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,11 @@ public class ModelTrainerService {
             throw new IllegalStateException("Model has not been trained yet");
         }
         return model;
+    }
+
+    @PostConstruct
+    public void trainModelOnStartup() {
+       trainModel();
     }
 
     public void trainModel() {
