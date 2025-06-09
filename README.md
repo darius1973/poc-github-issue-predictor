@@ -1,6 +1,4 @@
-Absolutely! Here’s a well-structured `README.md` tailored for your GitHub repo that describes the project, setup, usage, and contribution guidelines:
 
----
 
 # GitHub Issue Resolution Predictor
 
